@@ -15,6 +15,11 @@
 		ACB17E5A273BACA4008CAB1B /* FinancialOperationsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACB17E58273BACA4008CAB1B /* FinancialOperationsViewController.xib */; };
 		ACB17E5F273BACF8008CAB1B /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB17E5E273BACF8008CAB1B /* Coordinator.swift */; };
 		ACB17E62273BAE9C008CAB1B /* FinancialOperationsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB17E61273BAE9C008CAB1B /* FinancialOperationsCoordinator.swift */; };
+		ACB17E66273BD003008CAB1B /* OperationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB17E64273BD003008CAB1B /* OperationDetailsViewController.swift */; };
+		ACB17E67273BD003008CAB1B /* OperationDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACB17E65273BD003008CAB1B /* OperationDetailsViewController.xib */; };
+		ACB17E6A273BD01D008CAB1B /* OperationDetailsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB17E69273BD01D008CAB1B /* OperationDetailsCoordinator.swift */; };
+		ACB17E6E273BD3E7008CAB1B /* FinancialOperationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB17E6D273BD3E7008CAB1B /* FinancialOperationsViewModel.swift */; };
+		ACB17E71273BD686008CAB1B /* OperationDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB17E70273BD686008CAB1B /* OperationDetailsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +33,11 @@
 		ACB17E58273BACA4008CAB1B /* FinancialOperationsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FinancialOperationsViewController.xib; sourceTree = "<group>"; };
 		ACB17E5E273BACF8008CAB1B /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		ACB17E61273BAE9C008CAB1B /* FinancialOperationsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialOperationsCoordinator.swift; sourceTree = "<group>"; };
+		ACB17E64273BD003008CAB1B /* OperationDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationDetailsViewController.swift; sourceTree = "<group>"; };
+		ACB17E65273BD003008CAB1B /* OperationDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OperationDetailsViewController.xib; sourceTree = "<group>"; };
+		ACB17E69273BD01D008CAB1B /* OperationDetailsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationDetailsCoordinator.swift; sourceTree = "<group>"; };
+		ACB17E6D273BD3E7008CAB1B /* FinancialOperationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialOperationsViewModel.swift; sourceTree = "<group>"; };
+		ACB17E70273BD686008CAB1B /* OperationDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationDetailsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +74,7 @@
 				ACB17E3F273BA9FD008CAB1B /* SceneDelegate.swift */,
 				ACB17E5D273BACE1008CAB1B /* Coordinators */,
 				ACB17E56273BAC91008CAB1B /* Views */,
+				ACB17E6C273BD3C9008CAB1B /* ViewModels */,
 				ACB17E46273BA9FF008CAB1B /* Assets.xcassets */,
 				ACB17E48273BA9FF008CAB1B /* LaunchScreen.storyboard */,
 				ACB17E4B273BA9FF008CAB1B /* Info.plist */,
@@ -76,6 +87,8 @@
 			children = (
 				ACB17E57273BACA4008CAB1B /* FinancialOperationsViewController.swift */,
 				ACB17E58273BACA4008CAB1B /* FinancialOperationsViewController.xib */,
+				ACB17E64273BD003008CAB1B /* OperationDetailsViewController.swift */,
+				ACB17E65273BD003008CAB1B /* OperationDetailsViewController.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -85,8 +98,18 @@
 			children = (
 				ACB17E5E273BACF8008CAB1B /* Coordinator.swift */,
 				ACB17E61273BAE9C008CAB1B /* FinancialOperationsCoordinator.swift */,
+				ACB17E69273BD01D008CAB1B /* OperationDetailsCoordinator.swift */,
 			);
 			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		ACB17E6C273BD3C9008CAB1B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				ACB17E6D273BD3E7008CAB1B /* FinancialOperationsViewModel.swift */,
+				ACB17E70273BD686008CAB1B /* OperationDetailsViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,6 +170,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACB17E4A273BA9FF008CAB1B /* LaunchScreen.storyboard in Resources */,
+				ACB17E67273BD003008CAB1B /* OperationDetailsViewController.xib in Resources */,
 				ACB17E5A273BACA4008CAB1B /* FinancialOperationsViewController.xib in Resources */,
 				ACB17E47273BA9FF008CAB1B /* Assets.xcassets in Resources */,
 			);
@@ -160,10 +184,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACB17E5F273BACF8008CAB1B /* Coordinator.swift in Sources */,
+				ACB17E66273BD003008CAB1B /* OperationDetailsViewController.swift in Sources */,
+				ACB17E6E273BD3E7008CAB1B /* FinancialOperationsViewModel.swift in Sources */,
+				ACB17E6A273BD01D008CAB1B /* OperationDetailsCoordinator.swift in Sources */,
 				ACB17E59273BACA4008CAB1B /* FinancialOperationsViewController.swift in Sources */,
 				ACB17E3E273BA9FD008CAB1B /* AppDelegate.swift in Sources */,
 				ACB17E40273BA9FD008CAB1B /* SceneDelegate.swift in Sources */,
 				ACB17E62273BAE9C008CAB1B /* FinancialOperationsCoordinator.swift in Sources */,
+				ACB17E71273BD686008CAB1B /* OperationDetailsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

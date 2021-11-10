@@ -1,5 +1,5 @@
 //
-//  FinancialOperationsViewController.swift
+//  OperationDetailsViewController.swift
 //  FinanceApp
 //
 //  Created by Arie Peretz on 10/11/2021.
@@ -7,8 +7,8 @@
 
 import UIKit
 
-class FinancialOperationsViewController: UIViewController {
-    private let headerTitle: String = "Financial Operations"
+class OperationDetailsViewController: UIViewController {
+
     private var viewModel: ViewModel
     
     init(viewModel: ViewModel) {
@@ -22,6 +22,5 @@ class FinancialOperationsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = headerTitle
     }
 }
