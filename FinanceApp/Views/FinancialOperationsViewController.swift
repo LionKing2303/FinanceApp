@@ -38,6 +38,7 @@ class FinancialOperationsViewController: UIViewController {
         super.viewDidLoad()
         title = headerTitle
         
+        searchBar.delegate = self
         configureTableView()
         
         viewModel.$filteredOperations
@@ -83,5 +84,11 @@ class FinancialOperationsViewController: UIViewController {
         snapshot.appendSections([.main])
         snapshot.appendItems(items, toSection: .main)
         dataSource.apply(snapshot)
+    }
+}
+
+extension FinancialOperationsViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        viewModel.filter(with: searchText)
     }
 }

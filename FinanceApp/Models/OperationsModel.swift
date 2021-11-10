@@ -26,7 +26,7 @@ struct OperationsModel: Codable {
         let operationId: Int
         
         func contains(text: String) -> Bool {
-            (operationDesc?.contains(text) ?? false) || ("\(amount ?? 0)".contains(text)) || (source?.contains(text) ?? false) || (address?.contains(text) ?? false)
+            (operationType == .charge) ? (operationDesc?.contains(text) ?? false) : false || ("\(amount ?? 0)".contains(text)) || (source?.contains(text) ?? false) || (address?.contains(text) ?? false)
         }
     }
 }
