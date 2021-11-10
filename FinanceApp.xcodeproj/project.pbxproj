@@ -9,21 +9,25 @@
 /* Begin PBXBuildFile section */
 		ACB17E3E273BA9FD008CAB1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB17E3D273BA9FD008CAB1B /* AppDelegate.swift */; };
 		ACB17E40273BA9FD008CAB1B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB17E3F273BA9FD008CAB1B /* SceneDelegate.swift */; };
-		ACB17E42273BA9FD008CAB1B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB17E41273BA9FD008CAB1B /* ViewController.swift */; };
-		ACB17E45273BA9FD008CAB1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACB17E43273BA9FD008CAB1B /* Main.storyboard */; };
 		ACB17E47273BA9FF008CAB1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACB17E46273BA9FF008CAB1B /* Assets.xcassets */; };
 		ACB17E4A273BA9FF008CAB1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACB17E48273BA9FF008CAB1B /* LaunchScreen.storyboard */; };
+		ACB17E59273BACA4008CAB1B /* FinancialOperationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB17E57273BACA4008CAB1B /* FinancialOperationsViewController.swift */; };
+		ACB17E5A273BACA4008CAB1B /* FinancialOperationsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACB17E58273BACA4008CAB1B /* FinancialOperationsViewController.xib */; };
+		ACB17E5F273BACF8008CAB1B /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB17E5E273BACF8008CAB1B /* Coordinator.swift */; };
+		ACB17E62273BAE9C008CAB1B /* FinancialOperationsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB17E61273BAE9C008CAB1B /* FinancialOperationsCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		ACB17E3A273BA9FD008CAB1B /* FinanceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinanceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACB17E3D273BA9FD008CAB1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACB17E3F273BA9FD008CAB1B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		ACB17E41273BA9FD008CAB1B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		ACB17E44273BA9FD008CAB1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ACB17E46273BA9FF008CAB1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ACB17E49273BA9FF008CAB1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ACB17E4B273BA9FF008CAB1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ACB17E57273BACA4008CAB1B /* FinancialOperationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialOperationsViewController.swift; sourceTree = "<group>"; };
+		ACB17E58273BACA4008CAB1B /* FinancialOperationsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FinancialOperationsViewController.xib; sourceTree = "<group>"; };
+		ACB17E5E273BACF8008CAB1B /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		ACB17E61273BAE9C008CAB1B /* FinancialOperationsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialOperationsCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +62,31 @@
 			children = (
 				ACB17E3D273BA9FD008CAB1B /* AppDelegate.swift */,
 				ACB17E3F273BA9FD008CAB1B /* SceneDelegate.swift */,
-				ACB17E41273BA9FD008CAB1B /* ViewController.swift */,
-				ACB17E43273BA9FD008CAB1B /* Main.storyboard */,
+				ACB17E5D273BACE1008CAB1B /* Coordinators */,
+				ACB17E56273BAC91008CAB1B /* Views */,
 				ACB17E46273BA9FF008CAB1B /* Assets.xcassets */,
 				ACB17E48273BA9FF008CAB1B /* LaunchScreen.storyboard */,
 				ACB17E4B273BA9FF008CAB1B /* Info.plist */,
 			);
 			path = FinanceApp;
+			sourceTree = "<group>";
+		};
+		ACB17E56273BAC91008CAB1B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				ACB17E57273BACA4008CAB1B /* FinancialOperationsViewController.swift */,
+				ACB17E58273BACA4008CAB1B /* FinancialOperationsViewController.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		ACB17E5D273BACE1008CAB1B /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				ACB17E5E273BACF8008CAB1B /* Coordinator.swift */,
+				ACB17E61273BAE9C008CAB1B /* FinancialOperationsCoordinator.swift */,
+			);
+			path = Coordinators;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,8 +147,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACB17E4A273BA9FF008CAB1B /* LaunchScreen.storyboard in Resources */,
+				ACB17E5A273BACA4008CAB1B /* FinancialOperationsViewController.xib in Resources */,
 				ACB17E47273BA9FF008CAB1B /* Assets.xcassets in Resources */,
-				ACB17E45273BA9FD008CAB1B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,23 +159,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACB17E42273BA9FD008CAB1B /* ViewController.swift in Sources */,
+				ACB17E5F273BACF8008CAB1B /* Coordinator.swift in Sources */,
+				ACB17E59273BACA4008CAB1B /* FinancialOperationsViewController.swift in Sources */,
 				ACB17E3E273BA9FD008CAB1B /* AppDelegate.swift in Sources */,
 				ACB17E40273BA9FD008CAB1B /* SceneDelegate.swift in Sources */,
+				ACB17E62273BAE9C008CAB1B /* FinancialOperationsCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		ACB17E43273BA9FD008CAB1B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				ACB17E44273BA9FD008CAB1B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		ACB17E48273BA9FF008CAB1B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -289,6 +305,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KJSUL68A86;
 				INFOPLIST_FILE = FinanceApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -296,7 +313,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.arieperetz.FinanceApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -308,6 +325,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KJSUL68A86;
 				INFOPLIST_FILE = FinanceApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -315,7 +333,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.arieperetz.FinanceApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
