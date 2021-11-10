@@ -8,6 +8,7 @@
 import UIKit
 
 final class OperationDetailsCoordinator: Coordinator {
+    // MARK: -- Private variables
     private weak var operationDetailsViewController: OperationDetailsViewController?
     private weak var navigationController: UINavigationController?
     private var operationId: Int

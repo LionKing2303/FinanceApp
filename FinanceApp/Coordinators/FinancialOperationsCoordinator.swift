@@ -9,8 +9,8 @@ import UIKit
 import Combine
 
 final class FinancialOperationsCoordinator: Coordinator {
+    // MARK: -- Private variables
     private var childCoordinators = [Coordinator]()
-
     private weak var financialOperationsViewController: FinancialOperationsViewController?
     private weak var navigationController: UINavigationController?
     private var cancellables = Set<AnyCancellable>()

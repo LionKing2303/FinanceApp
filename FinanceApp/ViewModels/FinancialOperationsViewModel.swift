@@ -24,6 +24,7 @@ extension FinancialOperationsViewController {
         }
         
         func fetchData() {
+            // Fetch the data from rthe repository
             service.fetchData()
                 .replaceError(with: OperationsModel(operations: []))
                 .sink { [weak self] model in
@@ -41,6 +42,12 @@ extension FinancialOperationsViewController {
                 .filter { model in
                     model.contains(text: text) || text.isEmpty
                 }
+        }
+        
+        func selectOperation(operationId: Int) {
+            // Publish the operation id
+            // This triggers the coordinator to push the details view
+            self.operationId = operationId
         }
     }
 }

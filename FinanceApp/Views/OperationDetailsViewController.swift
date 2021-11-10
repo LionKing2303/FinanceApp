@@ -8,8 +8,13 @@
 import UIKit
 
 class OperationDetailsViewController: UIViewController {
+    
+    // MARK: -- Private variables
     private let headerTitle: String = "Operation"
     private var viewModel: ViewModel
+    
+    // MARK: -- Outlets
+    @IBOutlet weak var operationIdTitle: UILabel!
     
     init(viewModel: ViewModel) {
         self.viewModel = viewModel
@@ -23,5 +28,6 @@ class OperationDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = headerTitle
+        operationIdTitle.text = "Operation Id: \(viewModel.operationId)"
     }
 }

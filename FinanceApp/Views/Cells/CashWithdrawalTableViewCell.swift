@@ -9,12 +9,14 @@ import UIKit
 
 class CashWithdrawalTableViewCell: UITableViewCell {
     static let identifier: String = "CashWithdrawalTableViewCell"
+    
+    // MARK: -- Outlets
     @IBOutlet weak var amount: UILabel!
     @IBOutlet weak var source: UILabel!
     @IBOutlet weak var address: UILabel!
     
     func configure(with model: OperationsModel.Operation) {
-        amount.text = "$ \(model.amount ?? 0)"
+        amount.text = "$\(model.amount ?? 0)"
         source.text = model.source
         address.text = model.address
     }

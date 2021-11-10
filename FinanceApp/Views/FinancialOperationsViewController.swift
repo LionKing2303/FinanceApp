@@ -9,7 +9,7 @@ import UIKit
 import Combine
 
 class FinancialOperationsViewController: UIViewController {
-    // MARK: -- Section and cell types
+    // MARK: -- Table view sections
     enum Section {
         case main
     }
@@ -58,6 +58,7 @@ class FinancialOperationsViewController: UIViewController {
         
         tableView.estimatedRowHeight = 44.0
         tableView.rowHeight = UITableView.automaticDimension
+        tableView.delegate = self
         dataSource = .init(tableView: tableView, cellProvider: {
             (tableView, indexPath, model) -> UITableViewCell? in
             switch model.operationType {
@@ -67,11 +68,15 @@ class FinancialOperationsViewController: UIViewController {
                 return cell
             case .charge:
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: ChargeTableViewCell.identifier) as? ChargeTableViewCell else { return UITableViewCell() }
-                cell.configure(with: model)
+                cell.configure(with: model) { [weak self] in
+                    self?.selectOperation(model: model)
+                }
                 return cell
             case .savingWithdrawal, .refund, .salary:
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: OtherTableViewCell.identifier) as? OtherTableViewCell else { return UITableViewCell() }
-                cell.configure(with: model)
+                cell.configure(with: model) { [weak self] in
+                    self?.selectOperation(model: model)
+                }
                 return cell
             case .none:
                 return UITableViewCell()
@@ -85,10 +90,28 @@ class FinancialOperationsViewController: UIViewController {
         snapshot.appendItems(items, toSection: .main)
         dataSource.apply(snapshot)
     }
+    
+    private func selectOperation(model: OperationsModel.Operation?) {
+        guard let id = model?.operationId else { return }
+        viewModel.selectOperation(operationId: id)
+    }
+}
+
+extension FinancialOperationsViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // Selecting a row should work only on cashWithdrawal type of cell
+        let model = dataSource.itemIdentifier(for: indexPath)
+        switch model?.operationType {
+        case .cashWithdrawal:
+            selectOperation(model: model)
+        default: break
+        }
+    }
 }
 
 extension FinancialOperationsViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        // Ask the view model to filter the operations based on the search text
         viewModel.filter(with: searchText)
     }
 }
