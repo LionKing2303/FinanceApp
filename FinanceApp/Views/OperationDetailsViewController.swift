@@ -8,7 +8,7 @@
 import UIKit
 
 class OperationDetailsViewController: UIViewController {
-
+    private let headerTitle: String = "Operation"
     private var viewModel: ViewModel
     
     init(viewModel: ViewModel) {
@@ -22,5 +22,6 @@ class OperationDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = headerTitle
     }
 }

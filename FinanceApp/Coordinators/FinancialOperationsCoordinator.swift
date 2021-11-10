@@ -22,8 +22,10 @@ final class FinancialOperationsCoordinator: Coordinator {
     func start() {
         guard let navigationController = navigationController else { return }
         
-        // Create view and view model and push in the navigation controller
-        let viewModel = FinancialOperationsViewController.ViewModel()
+        // Create view, view model and service,
+        // then push the view in the navigation controller
+        let service = MockRepository()
+        let viewModel = FinancialOperationsViewController.ViewModel(service: service)
         let financialOperationsVC = FinancialOperationsViewController(viewModel: viewModel)
         navigationController.pushViewController(financialOperationsVC, animated: true)
         
@@ -36,7 +38,6 @@ final class FinancialOperationsCoordinator: Coordinator {
         // When a value comes down from the view model
         // we open the details view controller with that value
         viewModel.$operationId
-            .print()
             .sink { [weak self] id in
                 self?.openOperationDetails(operationId: id)
             }
